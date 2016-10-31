@@ -1,0 +1,16 @@
+<head>
+<title>Photogram</title>
+</head>
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+<h1>Photo Details</h1>
+<% source_url=Photo.where(:id=>@photo_id).pluck(:source)%>
+<% source_caption=Photo.where(:id=>@photo_id).pluck(:caption)%>
+
+<img src="<%=source_url.join(",")%>" width="720"/>
+<p><%=source_caption.join(",")%></p>
+<a href="/photos">Back</a>
+<a href="/photos/<%=@photo_id%>/edit">Edit</a>
+<a href="/delete_photo/<%=@photo_id%>">Delete</a>
+</body>
+<script src="chrome-extension://bmagokdooijbeehmkpknfglimnifench/googleChrome.js"/>
+</html>

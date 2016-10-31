@@ -1,0 +1,17 @@
+<html>
+<h1>Edit A Photo</h1>
+<%@photo_id_to_update=@photo_id%>
+<form action="/photos/update_photo/<%=@photo_id%>">
+  <div>
+    <label for="photo_caption">Caption:</label>
+    <input id="photo_caption" type="text" name="the_caption" value="<%= @photo_caption.join(",") %>">
+  </div>
+  <div>
+    <label for="photo_image_url">Image URL:</label>
+    <input id="photo_image_url" type="text" name="the_source" value="<%= @photo_source.join(",")%>">
+  </div>
+  <div>
+    <button>Edit Photo</button>
+  </div>
+</form>
+</html>
